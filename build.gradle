@@ -53,3 +53,13 @@ sourceSets {
         }
     }
 }
+
+task runServer(type: JavaExec) {
+    classpath = sourceSets.main.runtimeClasspath
+    main = 'jade.hello.HelloWorldServer'
+}
+
+task runClient(type: JavaExec) {
+    classpath = sourceSets.main.runtimeClasspath
+    main = 'jade.hello.HelloWorldClient'
+}
