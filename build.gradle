@@ -60,6 +60,9 @@ task runServer(type: JavaExec) {
 }
 
 task runClient(type: JavaExec) {
+    if(project.hasProperty('arg')) {
+        args(arg)
+    }
     classpath = sourceSets.main.runtimeClasspath
     main = 'jade.hello.HelloWorldClient'
 }
